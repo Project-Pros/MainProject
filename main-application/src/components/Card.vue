@@ -1,5 +1,5 @@
 <template>
-<div id="card">
+<div id="card" class="container">
   <span>
       <h3>Title: {{this.title}}</h3>
   </span>
