@@ -24,6 +24,8 @@ II. Design
 
 III. Progress Analysis
 ----------------------
+1. Our member Reem worked on the creation of the login page. She was struggling with the functionality of the page. As a group, we plan to research how to add functionality to it and we also plan to research how to incorporate a database to hold the accounts.
+2. Our member CJ worked on the creation of the cards to be displayed on the homepage. Making the cards was part of one of our tech exercises, so we all should be able to make one. As a group, we plan to decorate the homepage more and add further functionality to the tasks.
 
 IV. Release Notes
 -------------------
