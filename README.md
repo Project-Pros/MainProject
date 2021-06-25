@@ -29,4 +29,4 @@ III. Progress Analysis
 
 IV. Release Notes
 -------------------
-For the first Code Milestone due on June 24, 2021, we have a prototype of the login page. We are able to view the sign-in and sign-up tabs of this page. It is not functional yet. We have also started working on the homepage for the application. We worked make a card that can be displayed on the homepage as a task. This homepage is also not functional, but it has been started and we are able to view what we have created.
+For the first Code Milestone due on June 24, 2021, we have a prototype of the login page. We are able to view the sign-in and sign-up tabs of this page. It is not functional yet. We have also started working on the homepage for the application. We worked make a card that can be displayed on the homepage as a task. This homepage is also not functional, but it has been started and we are able to view what we have created. In comparison to the predicted milestone in the project plan, we have completed a lot of the aspects we planned to...
