@@ -46,4 +46,15 @@ p{
   margin-bottom: 5px;
   text-align: left;
 }
+button {
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 12px;
+  border-radius: 8px;
+}
 </style>
