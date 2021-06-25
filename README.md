@@ -10,7 +10,7 @@ css.css---                     A css file of the setup of the login page]/
 #components(folder),
 App.vue---                     A vue starter file that will be used for the homepage of the application,
 main.js---                     A js file that will consist of the main code for the application.]/
-components(folder) includes: [
+#components(folder) includes: [
 Card.vue---                     A vue file which contains starter code for a card to display on the homepage,
 HelloWorld.vue---               A vue file which contains practice code for Hello World.]/
 MainProject.iml, babel.config.js, package-lock,json, package.json, 
