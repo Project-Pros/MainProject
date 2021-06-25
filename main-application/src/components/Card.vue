@@ -1,7 +1,7 @@
 <template>
 <div id="card" class="container">
   <span>
-      <h3>Title: {{this.title}}</h3>
+      <h3>{{this.number}}. Title: {{this.title}}</h3>
   </span>
   <span>
       <h4>Description:</h4>
@@ -13,11 +13,11 @@
 
 <script>
 export default {
-  name: "Card",
-  data:() => ({
-    title: "Task 1",
-    description: "do this"
-  })
+  name: 'Card',
+  props: [  'title',
+    'description',
+    'number'
+  ]
 }
 </script>
 
@@ -29,9 +29,10 @@ export default {
   border:2px solid;
   border-color:black;
   border-radius: 25px;
-  background: gray;
-  color: white;
+  background:  #e7e7e7;
+  color: black;
   word-wrap: break-word;
+  font-family: Calibri;
 }
 h3{
   text-align: left;
