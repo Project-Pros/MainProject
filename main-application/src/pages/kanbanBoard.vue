@@ -1,5 +1,5 @@
 <template>
-
+<p>kanban board</p>
 </template>
 
 <script>

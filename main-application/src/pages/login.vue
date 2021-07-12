@@ -1,10 +1,6 @@
 <template>
   <div class="login-wrap">
 
-    <link rel="stylesheet" href="css.css">
-
-    <link rel="stylesheet" href="css.css">
-
     <div class="login-html">
       <h1> Welcome to Project Pros Website</h1>
 
@@ -48,10 +44,6 @@
 
           <div class="group">
             <fieldset>
-
-
-              </optgroup>
-              </select>
             </fieldset>
           </div>
           <div class="group">
@@ -59,7 +51,7 @@
             <div class="hr">
               <div class="foot-lnk">
 
-                <label for="tab-1">Already Member?</a>
+                <label for="tab-1">Already Member?</label>
               </div>
             </div>
           </div>
