@@ -7,6 +7,10 @@
       <h4>Description:</h4>
       <p>{{ this.description }}</p>
   </span>
+  <span>
+    <h4>Date to be completed by: </h4>
+    <p>{{this.date}}</p>
+  </span>
   <button>Edit</button>
 </div>
 </template>
@@ -16,7 +20,8 @@ export default {
   name: 'Card',
   props: [  'title',
     'description',
-    'number'
+    'number',
+      'date'
   ]
 }
 </script>

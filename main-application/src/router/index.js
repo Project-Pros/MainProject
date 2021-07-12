@@ -3,6 +3,7 @@ import Router from 'vue-router';
 const Login = () => import('../pages/login');
 const Tasks = () => import('../pages/tasks');
 const KanbanBoard = () => import('../pages/kanbanBoard');
+const Calendar = () => import('../pages/calendar');
 
 
 Vue.use(Router);
@@ -25,6 +26,11 @@ export default new Router({
             path: '/',
             name: 'Tasks',
             component: Tasks
-        }
+        },
+        {
+            path: '/calendar',
+            name: 'Calendar',
+            component: Calendar
+        },
     ]
 });
