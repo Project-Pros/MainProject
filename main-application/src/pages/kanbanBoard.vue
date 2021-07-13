@@ -120,7 +120,7 @@ export default {
     methods: {
     add : function(){
     if(this.addTask) {
-    this.backlogArray.push( {name: this.addTask});
+    this.arrBackLog.push( {name: this.addTask});
     this.addTask = "";
     }
 }
