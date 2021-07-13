@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <h1>Project Management</h1>
-    <div>
-      <router-view/>
-    </div>
+      <header class="app-header">
+        <app-nav></app-nav>
+      </header>
+      <main class="container">
+        <router-view></router-view>
+      </main>
   </div>
 </template>
 
 <script>
 
-export default {
-  name: 'App',
+import AppNav from './components/AppNav'
 
+export default {
+  components: {
+    AppNav
+  }
 }
 </script>
 
