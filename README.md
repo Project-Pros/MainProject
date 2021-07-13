@@ -2,17 +2,21 @@
 I. Files Included
 ------------------
 #main-application(folder) which includes: [
-login-ptototype(folder), src(folder)]/
-#login-ptototype(folder) includes: [
-loginsignup.html---            An html file of main login page,
-css.css---                     A css file of the setup of the login page]/
+src(folder)]/
 #src(folder) includes: [
 #components(folder),
+#pages(folder),
+#router(folder),
 App.vue---                     A vue starter file that will be used for the homepage of the application,
 main.js---                     A js file that will consist of the main code for the application.]/
 #components(folder) includes: [
-Card.vue---                     A vue file which contains starter code for a card to display on the homepage,
-HelloWorld.vue---               A vue file which contains practice code for Hello World.]/
+Card.vue---                     A vue file which contains starter code for a card to display on the homepage,]/
+#pages(folder) includes: [
+calendar.vue---               A vue starter file that will be used for the calendar page of the application,
+kanbanBoard.vue---            A vue file that will be used for the kanbanBoard page of the application,
+login.vue---                  A vue file that holds all the code from the previously created "loginprototype" folder and used for the login page,
+tasks.vue---                  A vue file that holds the code for the tasks that will display on the kanban board.
+
 MainProject.iml, babel.config.js, package-lock,json, package.json, 
 README.md                      
 
