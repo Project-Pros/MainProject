@@ -10,6 +10,7 @@ src(folder)]/
 App.vue---                     A vue starter file that will be used for the homepage of the application,
 main.js---                     A js file that will consist of the main code for the application.]/
 #components(folder) includes: [
+AppNav.vue---                   A vue file that works with navigating between the different pages on the application,
 Card.vue---                     A vue file which contains starter code for a card to display on the homepage,]/
 #pages(folder) includes: [
 calendar.vue---               A vue starter file that will be used for the calendar page of the application,
