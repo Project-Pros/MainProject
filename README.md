@@ -15,8 +15,9 @@ Card.vue---                     A vue file which contains starter code for a car
 calendar.vue---               A vue starter file that will be used for the calendar page of the application,
 kanbanBoard.vue---            A vue file that will be used for the kanbanBoard page of the application,
 login.vue---                  A vue file that holds all the code from the previously created "loginprototype" folder and used for the login page,
-tasks.vue---                  A vue file that holds the code for the tasks that will display on the kanban board.
-
+tasks.vue---                  A vue file that holds the code for the tasks that will display on the kanban board.]/
+#router(folder) includes: [
+index.js---                   A js file that serves as a router for the application.]/
 MainProject.iml, babel.config.js, package-lock,json, package.json, 
 README.md                      
 
