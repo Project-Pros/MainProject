@@ -14,6 +14,11 @@
         <input v-model="taskDescription" placeholder="description">
       </span>
     <br />
+<!--    <span class="input-boxes">-->
+<!--        <p>Due Date: </p>-->
+<!--        <datepicker v-model="taskDueDate"></datepicker>-->
+<!--      </span>-->
+<!--    <br />-->
     <button class="add-button" type="button" v-on:click="addTask()">Add Task</button>
   </div>
   </div>
@@ -22,6 +27,8 @@
 <script>
 
 import card from '../components/Card.vue'
+// import Datepicker from 'vuejs-datepicker';
+
 
 export default {
   name: "tasks.vue",
@@ -34,18 +41,21 @@ export default {
       ],
       count: 1,
       taskTitle: '',
-      taskDescription: ''
+      taskDescription: '',
+      taskDueDate: ''
     };
   },
   components: {
-    card
+    card,
+    // Datepicker
   },
   methods: {
     addTask() {
       this.tasks.push({
         number: this.count++,
         title: this.taskTitle,
-        description: this.taskDescription
+        description: this.taskDescription,
+        date: this.taskDueDate
       });
       this.taskTitle = '',
           this.taskDescription = ''

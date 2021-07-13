@@ -1,16 +1,16 @@
 <template>
 <div id="card" class="container">
   <span>
-      <h3>{{this.number}}. Title: {{this.title}}</h3>
+      <h5>{{this.number}}. Title: {{this.title}}</h5>
   </span>
   <span>
-      <h4>Description:</h4>
+      <h6>Description:</h6>
       <p>{{ this.description }}</p>
   </span>
-  <span>
-    <h4>Date to be completed by: </h4>
-    <p>{{this.date}}</p>
-  </span>
+<!--  <span>-->
+<!--    <h6>Date to be completed by: </h6>-->
+<!--    <p>{{this.date}}</p>-->
+<!--  </span>-->
   <button>Edit</button>
 </div>
 </template>
@@ -38,14 +38,18 @@ export default {
   color: black;
   word-wrap: break-word;
   font-family: Calibri;
+  word-wrap: break-word;
+
+
 }
-h3{
+h5{
   text-align: left;
   margin-top: 3px;
 }
-h4{
+h6{
   text-align: left;
   margin:0px;
+  font-weight: bold;
 }
 p{
   margin-bottom: 5px;

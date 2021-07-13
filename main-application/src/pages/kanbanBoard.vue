@@ -105,7 +105,7 @@ export default {
  data () {
   return {
     addTask: "",
-    backlogArray: [
+    arrBackLog: [
        {name : " g" },
        {name : "g " },
        {name : " g" },
