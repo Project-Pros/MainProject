@@ -56,8 +56,9 @@ The second main page of this application is the calendar. This page shows a cale
 ----------------------
 * Our member Reem worked on the creation of the login page. She was struggling with the functionality of the page. As a group, we plan to research how to add functionality to it and we also plan to research how to incorporate a database to hold the accounts.
 * Our member CJ worked on the creation of the vue cards to be displayed on the homepage. Making the cards was part of one of our tech exercises, so we all should be able to make one. As a group, we plan to decorate the homepage more and add further functionality to the tasks.
-* We put together a separate page for the calendar and the kanban board which will have the tasks on it.
-* We also added in navigation between the two main pages of the application, the homepage and the calendar page.
+* We put together a separate page for the calendar and the kanban board which will have the tasks on it. We also added in navigation between the two main pages of the application, the homepage and the calendar page.
+* The kanban board has also been given functionality meaning that the user is able to switch where they would like to place their tasks based on the completion level. CJ and Reem worked together to make this possible.
+* The README file has been organized, written, and updated by Nikita.
 
 ## VI. Release Notes
 -------------------
