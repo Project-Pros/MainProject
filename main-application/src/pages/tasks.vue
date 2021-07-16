@@ -34,11 +34,7 @@ export default {
   name: "tasks.vue",
   data: function() {
     return {
-      tasks: [
-        //   {number: 1, title: 'Build bed frame', description: '72in x 72in'},
-        // {number: 2, title: 'Paint Walls', description: 'Gray'},
-        // {number: 3, title: 'Install Trim', description: 'paint it white first'}
-      ],
+      tasks: [],
       count: 1,
       taskTitle: '',
       taskDescription: '',
@@ -55,7 +51,6 @@ export default {
         number: this.count++,
         title: this.taskTitle,
         description: this.taskDescription,
-        date: this.taskDueDate
       });
       this.taskTitle = '',
           this.taskDescription = ''

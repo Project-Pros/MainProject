@@ -1,16 +1,24 @@
 <template>
   <div class="container mt-4">
-    <div >
-      <div >
+    <div class="col-3">
+      <div class="p-2 alert alert-dark">
+        <h3>Add Task</h3>
         <b-form-input
             id="input-2"
-            v-model="addTask"
+            v-model="addTitle"
             required
-            placeholder="Add New Task"
+            placeholder="Add New Task Title"
+        ></b-form-input>
+        <b-form-input
+            id="input-2"
+            v-model="addDescription"
+            required
+            placeholder="Add New Task Description"
         ></b-form-input>
         <b-button @click="add">Add</b-button>
       </div>
     </div>
+
     <div class="row mt-4">
       <div class="col-3">
         <div class="p-2 alert alert-light">
@@ -25,7 +33,8 @@
                 v-for="element in arrBackLog"
                 :key="element.name"
             >
-              {{ element.name }}
+              Task: {{ element.name }} <br/>
+              Description: {{ element.description }}
             </div>
           </draggable>
         </div>
@@ -45,7 +54,8 @@
                v-for="element in arrTodo"
                :key="element.name"
              >
-               {{ element.name }}
+               Task: {{ element.name }} <br/>
+               Description: {{ element.description }}
              </div>
            </draggable>
          </div>
@@ -65,7 +75,8 @@
                v-for="element in arrDoing"
                :key="element.name"
              >
-               {{ element.name }}
+               Task: {{ element.name }} <br/>
+               Description: {{ element.description }}
              </div>
            </draggable>
          </div>
@@ -82,10 +93,13 @@
            >
              <div
                class="list-group-item"
-               v-for="element in arrDone"
-               :key="element.name"
+               v-for="(element, index) in arrDone"
+               :key="index"
              >
-               {{ element.name }}
+               Task: {{ element.name }} <br/>
+               Description: {{ element.description }}
+               <b-button @click="deleteTask(index)">Delete</b-button>
+
              </div>
            </draggable>
          </div>
@@ -104,26 +118,26 @@ export default {
  },
  data () {
   return {
-    addTask: "",
-    arrBackLog: [
-       {name : " g" },
-       {name : "g " },
-       {name : " g" },
-       {name : "g " },
-    ],
-
+    addTitle: '',
+    addDescription: '',
+    arrBackLog: [],
     arrTodo: [],
     arrDoing: [],
     arrDone: []
     };
     },
     methods: {
-    add : function(){
-    if(this.addTask) {
-    this.arrBackLog.push( {name: this.addTask});
-    this.addTask = "";
-    }
-}
+    add() {
+      if (this.addTitle) {
+        this.arrBackLog.push({name: this.addTitle, description: this.addDescription});
+        this.addTitle = '';
+        this.addDescription = '';
+      }
+    },
+      deleteTask(index){
+          this.arrDone = this.arrDone.slice(0,index)
+          this.arrDone = this.arrDone.slice(index+1)
+        }
 }
 }
 </script>
@@ -133,6 +147,9 @@ export default {
 .kanbanColumn {
   min-height: 400px;
 }
-
+#input-2 {
+  max-width: 500px;
+  margin-bottom: 10px;
+}
 </style>
 

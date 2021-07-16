@@ -24,9 +24,19 @@
             active-class="active"
             exact
         >
-          Tasks
+          Login
         </router-link>
+<!--        <router-link-->
+<!--            v-if="$auth.isAuthenticated"-->
+<!--            to="/tasks"-->
+<!--            class="nav-item nav-link"-->
+<!--            active-class="active"-->
+<!--            exact-->
+<!--        >-->
+<!--          Tasks-->
+<!--        </router-link>-->
         <router-link
+            v-if="$auth.isAuthenticated"
             to="/kanban"
             class="nav-item nav-link"
             active-class="active"
@@ -35,6 +45,7 @@
           Kanban Board
         </router-link>
         <router-link
+            v-if="$auth.isAuthenticated"
             to="/calendar"
             class="nav-item nav-link"
             active-class="active"

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import { authGuard } from "../auth/authGuard";
 const Login = () => import('../pages/login');
 const Tasks = () => import('../pages/tasks');
 const KanbanBoard = () => import('../pages/kanbanBoard');
@@ -15,22 +16,25 @@ export default new Router({
         {
             path: '/kanban',
             name: 'KanbanBoard',
-            component: KanbanBoard
+            component: KanbanBoard,
+            beforeEnter: authGuard
         },
         {
-            path: '/login',
+            path: '/',
             name: 'Login',
             component: Login
         },
         {
-            path: '/',
+            path: '/tasks',
             name: 'Tasks',
-            component: Tasks
+            component: Tasks,
+            beforeEnter: authGuard
         },
         {
             path: '/calendar',
             name: 'Calendar',
-            component: Calendar
+            component: Calendar,
+            beforeEnter: authGuard
         },
     ]
 });
