@@ -42,70 +42,70 @@
 
       <div class="col-3">
         <div class="p-2 alert alert-success">
-        <h3>To Do</h3>
+          <h3>To Do</h3>
 
-           <draggable
-             class="list-group kanbanColumn"
-             :list="arrTodo"
-             group="tasks"
-           >
-             <div
-               class="list-group-item"
-               v-for="element in arrTodo"
-               :key="element.name"
-             >
-               Task: {{ element.name }} <br/>
-               Description: {{ element.description }}
-             </div>
-           </draggable>
-         </div>
-       </div>
+          <draggable
+              class="list-group kanbanColumn"
+              :list="arrTodo"
+              group="tasks"
+          >
+            <div
+                class="list-group-item"
+                v-for="element in arrTodo"
+                :key="element.name"
+            >
+              Task: {{ element.name }} <br/>
+              Description: {{ element.description }}
+            </div>
+          </draggable>
+        </div>
+      </div>
 
-       <div class="col-3">
-         <div class="p-2 alert alert-danger">
-           <h3>Doing</h3>
+      <div class="col-3">
+        <div class="p-2 alert alert-danger">
+          <h3>Doing</h3>
 
-           <draggable
-             class="list-group kanbanColumn"
-             :list="arrDoing"
-             group="tasks"
-           >
-             <div
-               class="list-group-item"
-               v-for="element in arrDoing"
-               :key="element.name"
-             >
-               Task: {{ element.name }} <br/>
-               Description: {{ element.description }}
-             </div>
-           </draggable>
-         </div>
-       </div>
+          <draggable
+              class="list-group kanbanColumn"
+              :list="arrDoing"
+              group="tasks"
+          >
+            <div
+                class="list-group-item"
+                v-for="element in arrDoing"
+                :key="element.name"
+            >
+              Task: {{ element.name }} <br/>
+              Description: {{ element.description }}
+            </div>
+          </draggable>
+        </div>
+      </div>
 
-       <div class="col-3">
-         <div class="p-2 alert alert-dark">
-           <h3>Done</h3>
+      <div class="col-3">
+        <div class="p-2 alert alert-dark">
+          <h3>Done</h3>
 
-           <draggable
-             class="list-group kanbanColumn"
-             :list="arrDone"
-             group="tasks"
-           >
-             <div
-               class="list-group-item"
-               v-for="(element, index) in arrDone"
-               :key="index"
-             >
-               Task: {{ element.name }} <br/>
-               Description: {{ element.description }}
-               <b-button @click="deleteTask(index)">Delete</b-button>
+          <draggable
+              class="list-group kanbanColumn"
+              :list="arrDone"
+              group="tasks"
+          >
+            <div
+                class="list-group-item"
+                v-for="(element, index) in arrDone"
+                :key="index"
+            >
+              Task: {{ element.name }} <br/>
+              Description: {{ element.description }}
+              <b-button @click="deleteTask(index)">Delete</b-button>
 
-             </div>
-           </draggable>
-         </div>
-       </div>
-     </div>
-   </div>
+            </div>
+          </draggable>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -113,20 +113,20 @@ import draggable from "vuedraggable";
 
 export default {
   name: 'kanbanBoard.vue',
- components: {
+  components: {
     draggable
- },
- data () {
-  return {
-    addTitle: '',
-    addDescription: '',
-    arrBackLog: [],
-    arrTodo: [],
-    arrDoing: [],
-    arrDone: []
+  },
+  data () {
+    return {
+      addTitle: '',
+      addDescription: '',
+      arrBackLog: [],
+      arrTodo: [],
+      arrDoing: [],
+      arrDone: []
     };
-    },
-    methods: {
+  },
+  methods: {
     add() {
       if (this.addTitle) {
         this.arrBackLog.push({name: this.addTitle, description: this.addDescription});
@@ -134,11 +134,11 @@ export default {
         this.addDescription = '';
       }
     },
-      deleteTask(index){
-          this.arrDone = this.arrDone.slice(0,index)
-          this.arrDone = this.arrDone.slice(index+1)
-        }
-}
+    deleteTask(index){
+      this.arrDone = this.arrDone.slice(0,index)
+      this.arrDone = this.arrDone.slice(index+1)
+    }
+  }
 }
 </script>
 
