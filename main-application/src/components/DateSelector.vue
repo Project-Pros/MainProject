@@ -1,6 +1,6 @@
 <template>
   <div class="date-selector">
-    <span @click="selectPrevious"><</span>
+    <span @click="selectPrevious">?</span>
     <span @click="selectCurrent">Today</span>
     <span @click="selectNext">></span>
   </div>

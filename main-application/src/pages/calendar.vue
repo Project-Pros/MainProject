@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <Calendar/>
+    <CalendarMonth/>
   </div>
 </template>
 
 <script>
-import Calendar from "./components/CalendarMonth";
+import CalendarMonth from "../components/CalendarMonth";
 
 export default {
   name: "Calendar",
