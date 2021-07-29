@@ -12,13 +12,15 @@ This is the Project-Pros software application project with members Reem Aldhufai
 ## II. Files Included
 ------------------
 ### main-application(folder) which includes: 
+* dist(folder)
+* public(folder)
 * src(folder)
 * tests/units/pages(folder)
 * MainProject.iml
 * babel.config.js
 * package-lock.json
 * package.json, 
-README.md 
+* README.md 
 #### src(folder) includes: 
 * auth(folder),
 * components(folder),
@@ -27,16 +29,16 @@ README.md
 * App.vue---                     A vue starter file that will be used for the homepage of the application,
 * main.js---                     A js file that will consist of the main code for the application.
 #### auth(folder) includes:
-* authGuard.js---
-* index.js---
+* authGuard.js---                A js file that is used for adding in oauth for the login page,
+* index.js---                    A js file that is used for adding in oauth for the login page.
 #### components(folder) includes:
 * AppNav.vue---                   A vue file that works with navigating between the different pages on the application,
-* CalendarMonth.vue---
-* Card.vue---                     A vue file which contains starter code for a card to display on the homepage.
-* DateIndicator.vue---
-* DateSelector.vue---
-* MonthDay.vue---
-* Weekdays.vue---
+* CalendarMonth.vue---            A vue file that contains the setup of the calendar used in the application,
+* Card.vue---                     A vue file which contains starter code for a card to display on the homepage,
+* DateIndicator.vue---            A vue file that holds what the date is,
+* DateSelector.vue---             A vue file that lets user select a date on the calendar,
+* MonthDay.vue---                 A vue file that contains the days within a month on the calendar,
+* Weekdays.vue---                 A vue file that contains the days of the week on the calendar.
 #### pages(folder) includes:
 * calendar.vue---               A vue starter file that will be used for the calendar page of the application,
 * kanbanBoard.vue---            A vue file that will be used for the kanbanBoard page of the application,
@@ -69,6 +71,8 @@ The second main page of this application is the calendar. This page shows a cale
 * We put together a separate page for the calendar and the kanban board which will have the tasks on it. We also added in navigation between the two main pages of the application, the homepage and the calendar page.
 * The kanban board has also been given functionality meaning that the user is able to switch where they would like to place their tasks based on the completion level. CJ and Reem worked together to make this possible.
 * The README file has been organized, written, and updated by Nikita.
+* Our member CJ worked on creating an account for Digital Ocean so that we can use a server for our login page.
+* Our member Reem worked on creating and adding functionality to the calendar on the calendar page of our application.
 
 ## VI. Release Notes
 -------------------
@@ -76,3 +80,5 @@ The second main page of this application is the calendar. This page shows a cale
 For the first Code Milestone due on June 24, 2021, we have a prototype of the login page. We are able to view the sign-in and sign-up tabs of this page. It is not functional yet. We have also started working on the homepage for the application. We worked make a card that can be displayed on the homepage as a task. This homepage is functional. We are able to add new tasks to the page with a title and description. In comparison to the predicted milestone in the project plan, we have completed a lot of the aspects we planned to. We have some starter code for our main classes. We are able to create the vue cards and we have a viewable login page. We are just short of the amount of functionality that we planned to have done by this date.
 ### Code Milestone 2
 For the second Code Milestone due on July 15, 2021, we have added in new functions to our application. We have added in new pages onto the application. There is the login page, the kanban board page, and the calendar page. We have also added in navigation between these pages. This means that the user will be able to go back and forth on what pages they want to look at. This mostly applies for the kanban board page and the calendar page. Currently, we do not have the calendar created as that is part of code milestone 3. The kanban board now has functionality. The user is able to create tasks and then move the tasks around on the board based on completion. They are also able to delete tasks once they reach the done column. The login page is functional and works with Oauth0 service. The user can login and logout of the application. If they are logged in they can see the KanbanBoard and Calendar pages whereas if they are not only the login page will appear. Basic jest testing was also added to the project. 
+### Code Milestone 3
+For the third Code Milestone due on July 29, 2021, we added onto the functionality of our application. In order to make our login page functional, we had to incorporate a server to hold all the accounts created. To do this, we created a Digital Ocean account for our application. We are incorporating Oauth for the login page. We also added to the calendar page. Prior to this milestone, we just had a page for it, but now we have actually created a calendar to be displayed on the page. We also worked to add in functionality to the calendar. This includes clicking on the days on the calendar and clicking on dates. In comparison to the predicted milestone in the project plan, we have completed what we wanted to. In the project plan, it just says to add in the calendar which has been done. We were just also working on the login page server for this milestone as well.
