@@ -151,9 +151,8 @@ export default {
       }
     },
     deleteTask(index){
-      this.arrDone = this.arrDone.slice(0,index)
-      this.arrDone = this.arrDone.slice(index+1)
-      this.setDone(this.arrDone);
+      this.setDone(this.arrDone.slice(0,index));
+      this.setDone(this.arrDone.slice(index+1));
     }
   }
 }
