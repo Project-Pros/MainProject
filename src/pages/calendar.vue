@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <p>{{arrBackLog}}</p>
-    <p>{{arrTodo}}</p>
-    <p>{{arrDoing}}</p>
-    <p>{{arrDone}}</p>
+    <p>Backlog: {{arrBackLog}}</p>
+    <p>Todo: {{arrTodo}}</p>
+    <p>Doing: {{arrDoing}}</p>
+    <p>Done: {{arrDone}}</p>
 
     <CalendarMonth/>
   </div>

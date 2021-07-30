@@ -147,6 +147,7 @@ export default {
         this.setBacklog(this.arrBackLog);
         this.addTitle = '';
         this.addDescription = '';
+        this.dueDate = '';
       }
     },
     deleteTask(index){

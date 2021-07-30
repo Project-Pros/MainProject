@@ -52,7 +52,7 @@ export default {
 .date-selector {
   justify-content: space-between;
   display: flex;
-  width:20px;
+  width:20 0px;
   color: #999966
 }
 
