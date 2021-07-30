@@ -1,17 +1,26 @@
 <template>
   <div id="app">
+    <p>{{arrBackLog}}</p>
+    <p>{{arrTodo}}</p>
+    <p>{{arrDoing}}</p>
+    <p>{{arrDone}}</p>
+
     <CalendarMonth/>
   </div>
 </template>
 
 <script>
 import CalendarMonth from "../components/CalendarMonth";
+import {mapState} from 'vuex';
 
 export default {
   name: "Calendar",
 
   components: {
     CalendarMonth
+  },
+  computed: {
+    ...mapState(['arrBackLog', 'arrTodo', 'arrDoing', 'arrDone'])
   }
 };
 </script>

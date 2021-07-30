@@ -15,7 +15,8 @@
             required
             placeholder="Add New Task Description"
         ></b-form-input>
-        <b-button @click="add">Add</b-button>
+        <datepicker v-model="dueDate"></datepicker>
+        <b-button id="addButton" @click="add">Add</b-button>
       </div>
     </div>
 
@@ -35,6 +36,7 @@
             >
               Task: {{ element.name }} <br/>
               Description: {{ element.description }}
+              Due Date: {{element.dueDate}}
             </div>
           </draggable>
         </div>
@@ -56,6 +58,8 @@
             >
               Task: {{ element.name }} <br/>
               Description: {{ element.description }}
+              Due Date: {{element.dueDate}}
+
             </div>
           </draggable>
         </div>
@@ -77,6 +81,8 @@
             >
               Task: {{ element.name }} <br/>
               Description: {{ element.description }}
+              Due Date: {{element.dueDate}}
+
             </div>
           </draggable>
         </div>
@@ -98,6 +104,8 @@
             >
               Task: {{ element.name }} <br/>
               Description: {{ element.description }}
+              Due Date: {{element.dueDate}}
+
               <b-button @click="deleteTask(index)">Delete</b-button>
 
             </div>
@@ -110,26 +118,33 @@
 
 <script>
 import draggable from "vuedraggable";
+import {mapMutations, mapGetters, mapState} from 'vuex';
+import Datepicker from 'vuejs-datepicker';
+
 
 export default {
   name: 'kanbanBoard.vue',
   components: {
-    draggable
+    draggable,
+    Datepicker
   },
   data () {
     return {
       addTitle: '',
       addDescription: '',
-      arrBackLog: [],
-      arrTodo: [],
-      arrDoing: [],
-      arrDone: []
+      dueDate: ''
     };
   },
+  computed: {
+    ...mapState(['arrBackLog', 'arrTodo', 'arrDoing', 'arrDone'])
+  },
   methods: {
+    ...mapMutations(['setBacklog', 'setTodo', 'setDoing', 'setDone']),
+    ...mapGetters(['getBacklog', 'getTodo', 'getDoing', 'getDone']),
     add() {
       if (this.addTitle) {
-        this.arrBackLog.push({name: this.addTitle, description: this.addDescription});
+        this.arrBackLog.push({name: this.addTitle, description: this.addDescription, dueDate: this.dueDate});
+        this.setBacklog(this.arrBackLog);
         this.addTitle = '';
         this.addDescription = '';
       }
@@ -137,6 +152,7 @@ export default {
     deleteTask(index){
       this.arrDone = this.arrDone.slice(0,index)
       this.arrDone = this.arrDone.slice(index+1)
+      this.setDone(this.arrDone);
     }
   }
 }
@@ -150,6 +166,9 @@ export default {
 #input-2 {
   max-width: 500px;
   margin-bottom: 10px;
+}
+#addButton {
+  margin-top: 10px;
 }
 </style>
 

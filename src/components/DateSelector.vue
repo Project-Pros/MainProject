@@ -1,13 +1,18 @@
 <template>
   <div class="date-selector">
-    <span @click="selectPrevious">?</span>
+    <span @click="selectPrevious"><b-icon icon="arrow-left"></b-icon></span>
     <span @click="selectCurrent">Today</span>
-    <span @click="selectNext">></span>
+    <span @click="selectNext"> <b-icon icon="arrow-right"></b-icon></span>
   </div>
 </template>
 
 <script>
 import dayjs from "dayjs";
+import Vue  from 'vue'
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 
 export default {
   name: "CalendarModeSelector",
@@ -47,7 +52,7 @@ export default {
 .date-selector {
   justify-content: space-between;
   display: flex;
-  width:20 0px;
+  width:20px;
   color: #999966
 }
 
