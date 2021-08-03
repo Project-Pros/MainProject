@@ -10,7 +10,9 @@
 </template>
 
 <script>
-
+/**
+ * Main page of the application that controls routing and pages showing up
+ */
 import AppNav from './components/AppNav'
 
 export default {

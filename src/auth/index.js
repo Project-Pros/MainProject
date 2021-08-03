@@ -1,3 +1,6 @@
+/**
+ * Oauth0 configuration class
+ */
 import Vue from "vue";
 import createAuth0Client from "@auth0/auth0-spa-js";
 

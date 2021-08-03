@@ -16,14 +16,21 @@
 </template>
 
 <script>
+/**
+ * Login page to oAuth0 and the project pros application
+ */
 export default {
   name: "login.vue",
   methods: {
-    // Log the user in
+    /**
+     * Logs user into oAuth
+     */
     login() {
       this.$auth.loginWithRedirect();
     },
-    // Log the user out
+    /**
+     * Logs user our of oAuth
+     */
     logout() {
       this.$auth.logout({
         returnTo: window.location.origin

@@ -59,5 +59,8 @@
 </template>
 
 <script>
+/**
+ * A component that renders the app navigation bar at the top of the page.
+ */
 export default {}
 </script>

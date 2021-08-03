@@ -10,15 +10,24 @@
 </template>
 
 <script>
+/**
+ * This is the calendar page within the application.
+ */
 import CalendarMonth from "../components/CalendarMonth";
 import {mapState} from 'vuex';
 
 export default {
   name: "Calendar",
 
+  /**
+   * Imports the calendar component onto the page
+   */
   components: {
     CalendarMonth
   },
+  /**
+   * Imports the computed arrays from the store to be used in the HTML
+   */
   computed: {
     ...mapState(['arrBackLog', 'arrTodo', 'arrDoing', 'arrDone'])
   }

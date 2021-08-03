@@ -25,9 +25,10 @@
 </template>
 
 <script>
-
+/**
+ * This page is unused in the final version of the application
+ */
 import card from '../components/Card.vue'
-// import Datepicker from 'vuejs-datepicker';
 
 
 export default {
@@ -42,10 +43,12 @@ export default {
     };
   },
   components: {
-    card,
-    // Datepicker
+    card
   },
   methods: {
+    /**
+     * Added a task to the tasks array to be displayed on the page
+     */
     addTask() {
       this.tasks.push({
         number: this.count++,

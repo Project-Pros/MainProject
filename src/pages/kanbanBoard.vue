@@ -117,6 +117,9 @@
 </template>
 
 <script>
+/**
+ * This is the Kanban board view page shown within the application
+ */
 import draggable from "vuedraggable";
 import {mapMutations, mapGetters, mapState} from 'vuex';
 import Datepicker from 'vuejs-datepicker';
@@ -135,12 +138,21 @@ export default {
       dueDate: ''
     };
   },
+  /**
+   * Imports the computed arrays from the store to be used in the HTML
+   */
   computed: {
     ...mapState(['arrBackLog', 'arrTodo', 'arrDoing', 'arrDone'])
   },
+  /**
+   * Imports the methods from the store to be used in adding/moving tasks
+   */
   methods: {
     ...mapMutations(['setBacklog', 'setTodo', 'setDoing', 'setDone']),
     ...mapGetters(['getBacklog', 'getTodo', 'getDoing', 'getDone']),
+    /**
+     * The add function adds a task to the arrBacklog array and then resets the title, description, and date fields
+     */
     add() {
       if (this.addTitle) {
         this.arrBackLog.push({name: this.addTitle, description: this.addDescription, dueDate: this.dueDate});
@@ -150,6 +162,10 @@ export default {
         this.dueDate = '';
       }
     },
+    /**
+     * Deletes the task at the specified index
+     * @param index The index of the task to be deleted
+     */
     deleteTask(index){
       this.setDone(this.arrDone.slice(0,index));
       this.setDone(this.arrDone.slice(index+1));

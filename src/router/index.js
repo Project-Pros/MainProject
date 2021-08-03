@@ -1,3 +1,7 @@
+/**
+ * Routing of the application between each of the pages.
+ * Checks to makes sure the user is authenticated using the authGuard before showing some pages
+ */
 import Vue from 'vue';
 import Router from 'vue-router';
 import { authGuard } from "../auth/authGuard";
