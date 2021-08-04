@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/kanbanBoard.vue</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/kanbanBoard.vue</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>&lt;template>
+  &lt;div class="container mt-4">
+    &lt;div class="col-3">
+      &lt;div class="p-2 alert alert-dark">
+        &lt;h3>Add Task&lt;/h3>
+        &lt;b-form-input
+            id="input-2"
+            v-model="addTitle"
+            required
+            placeholder="Add New Task Title"
+        >&lt;/b-form-input>
+        &lt;b-form-input
+            id="input-2"
+            v-model="addDescription"
+            required
+            placeholder="Add New Task Description"
+        >&lt;/b-form-input>
+        &lt;datepicker v-model="dueDate">&lt;/datepicker>
+        &lt;b-button id="addButton" @click="add">Add&lt;/b-button>
+      &lt;/div>
+    &lt;/div>
+
+    &lt;div class="row mt-4">
+      &lt;div class="col-3">
+        &lt;div class="p-2 alert alert-light">
+          &lt;h3>Back Log List&lt;/h3>
+          &lt;draggable
+              class="list-group kanbanColumn"
+              :list="arrBackLog"
+              group="tasks"
+          >
+            &lt;div
+                class="list-group-item"
+                v-for="element in arrBackLog"
+                :key="element.name"
+            >
+              Task: {{ element.name }} &lt;br/>
+              Description: {{ element.description }}
+              Due Date: {{element.dueDate}}
+            &lt;/div>
+          &lt;/draggable>
+        &lt;/div>
+      &lt;/div>
+
+      &lt;div class="col-3">
+        &lt;div class="p-2 alert alert-success">
+          &lt;h3>To Do&lt;/h3>
+
+          &lt;draggable
+              class="list-group kanbanColumn"
+              :list="arrTodo"
+              group="tasks"
+          >
+            &lt;div
+                class="list-group-item"
+                v-for="element in arrTodo"
+                :key="element.name"
+            >
+              Task: {{ element.name }} &lt;br/>
+              Description: {{ element.description }}
+              Due Date: {{element.dueDate}}
+
+            &lt;/div>
+          &lt;/draggable>
+        &lt;/div>
+      &lt;/div>
+
+      &lt;div class="col-3">
+        &lt;div class="p-2 alert alert-danger">
+          &lt;h3>Doing&lt;/h3>
+
+          &lt;draggable
+              class="list-group kanbanColumn"
+              :list="arrDoing"
+              group="tasks"
+          >
+            &lt;div
+                class="list-group-item"
+                v-for="element in arrDoing"
+                :key="element.name"
+            >
+              Task: {{ element.name }} &lt;br/>
+              Description: {{ element.description }}
+              Due Date: {{element.dueDate}}
+
+            &lt;/div>
+          &lt;/draggable>
+        &lt;/div>
+      &lt;/div>
+
+      &lt;div class="col-3">
+        &lt;div class="p-2 alert alert-dark">
+          &lt;h3>Done&lt;/h3>
+
+          &lt;draggable
+              class="list-group kanbanColumn"
+              :list="arrDone"
+              group="tasks"
+          >
+            &lt;div
+                class="list-group-item"
+                v-for="(element, index) in arrDone"
+                :key="index"
+            >
+              Task: {{ element.name }} &lt;br/>
+              Description: {{ element.description }}
+              Due Date: {{element.dueDate}}
+
+              &lt;b-button @click="deleteTask(index)">Delete&lt;/b-button>
+
+            &lt;/div>
+          &lt;/draggable>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/template>
+
+&lt;script>
+/**
+ * This is the Kanban board view page shown within the application
+ */
+import draggable from "vuedraggable";
+import {mapMutations, mapGetters, mapState} from 'vuex';
+import Datepicker from 'vuejs-datepicker';
+
+
+export default {
+  name: 'kanbanBoard.vue',
+  components: {
+    draggable,
+    Datepicker
+  },
+  data () {
+    return {
+      addTitle: '',
+      addDescription: '',
+      dueDate: ''
+    };
+  },
+  /**
+   * Imports the computed arrays from the store to be used in the HTML
+   */
+  computed: {
+    ...mapState(['arrBackLog', 'arrTodo', 'arrDoing', 'arrDone'])
+  },
+  /**
+   * Imports the methods from the store to be used in adding/moving tasks
+   */
+  methods: {
+    ...mapMutations(['setBacklog', 'setTodo', 'setDoing', 'setDone']),
+    ...mapGetters(['getBacklog', 'getTodo', 'getDoing', 'getDone']),
+    /**
+     * The add function adds a task to the arrBacklog array and then resets the title, description, and date fields
+     */
+    add() {
+      if (this.addTitle) {
+        this.arrBackLog.push({name: this.addTitle, description: this.addDescription, dueDate: this.dueDate});
+        this.setBacklog(this.arrBackLog);
+        this.addTitle = '';
+        this.addDescription = '';
+        this.dueDate = '';
+      }
+    },
+    /**
+     * Deletes the task at the specified index
+     * @param index The index of the task to be deleted
+     */
+    deleteTask(index){
+      this.setDone(this.arrDone.slice(0,index));
+      this.setDone(this.arrDone.slice(index+1));
+    }
+  }
+}
+&lt;/script>
+
+&lt;style>
+
+.kanbanColumn {
+  min-height: 400px;
+}
+#input-2 {
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+#addButton {
+  margin-top: 10px;
+}
+&lt;/style>
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AppNav.html">AppNav</a></li><li><a href="module-login.html">login</a></li></ul><h3>Global</h3><ul><li><a href="global.html#created">created</a></li><li><a href="global.html#DEFAULT_REDIRECT_CALLBACK">DEFAULT_REDIRECT_CALLBACK</a></li><li><a href="global.html#getInstance">getInstance</a></li><li><a href="global.html#useAuth0">useAuth0</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed Aug 04 2021 13:33:43 GMT-0500 (Central Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
