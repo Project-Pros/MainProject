@@ -13,7 +13,7 @@ This is the Project-Pros software application project with members Reem Aldhufai
 <br/>How to run:
 <br/>In the terminal run `npm run serve` from MainProject
 <br/>How to generate jsdoc:
-<br/>In the terminal run `jsdoc src -r -c jsdocConfig.json` from Main Project
+<br/>In the terminal run `jsdoc src -r -c jsdocConfig.json -d docs` from Main Project
 
 ## II. Files Included
 ------------------
