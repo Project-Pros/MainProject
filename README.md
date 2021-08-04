@@ -8,7 +8,13 @@
 * [VI. Release Notes](#release-notes)
 ## I. Introduction
 -------------------
-This is the Project-Pros software application project with members Reem Aldhufairi, Dylan Bobbett, Nikita Estrada, and CJ Jurgens. While working on a big project, it is easy to get overwhelmed by the scope and how many elements are needed to complete final deliverable. We will develop a project management software that helps in organizing and managing projects. Our goal is to make a simplified Agile board that is focused on a singular project at a time. If a person is not familiar with Agile processes, they should still be able to use the tailored board with ease. For example, we would like it to be used for building a house, a software project, fixing a car, cleaning a house or other day to day projects that don’t necessarily require programming. 
+This is the Project-Pros software application project with members Reem Aldhufairi, Dylan Bobbett, Nikita Estrada, and CJ Jurgens. While working on a big project, it is easy to get overwhelmed by the scope and how many elements are needed to complete final deliverable. We will develop a project management software that helps in organizing and managing projects. Our goal is to make a simplified Agile board that is focused on a singular project at a time. If a person is not familiar with Agile processes, they should still be able to use the tailored board with ease. For example, we would like it to be used for building a house, a software project, fixing a car, cleaning a house or other day to day projects that don’t necessarily require programming.
+<br/>
+<br/>How to run:
+<br/>In the terminal run `npm run serve` from MainProject
+<br/>How to generate jsdoc:
+<br/>In the terminal run `jsdoc src -r -c jsdocConfig.json` from Main Project
+
 ## II. Files Included
 ------------------
 ### main-application(folder) which includes: 
