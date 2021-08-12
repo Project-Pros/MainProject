@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "email": "cjjurgens@unomaha.edu",
+      "arrBacklog": [
+        {
+          "name": "Do dishes",
+          "description": "rinse before adding to dishwasher",
+          "dueDate": "11/21/21"
+        }
+      ],
+      "arrTodo": [
+        {
+          "name": "Walk the Dog",
+          "description": "three times around the park",
+          "dueDate": "10/15/21"
+        }
+      ],
+      "arrDoing": [
+        {
+          "name": "Mow the Lawn",
+          "description": "diamond pattern",
+          "dueDate": "9/10/21"
+        }
+      ],
+      "arrDone": [
+        {
+          "name": "SE Final",
+          "description": "Due at Midnight Wednesday",
+          "dueDate": "8/11/21"
+        }
+      ]
+    },
+    {
+      "email": "jurgens.cj@gmail.com",
+      "arrBacklog": [
+        {
+          "name": "Lawn Care",
+          "description": "trim edges and fences",
+          "dueDate": "11/21/21"
+        }
+      ],
+      "arrTodo": [
+        {
+          "name": "Wash the laundry",
+          "description": "brights on cold",
+          "dueDate": "10/15/21"
+        }
+      ],
+      "arrDoing": [],
+      "arrDone": [
+        {
+          "name": "Mow the Lawn",
+          "description": "diamond pattern",
+          "dueDate": "9/10/21"
+        },
+        {
+          "name": "Mow the Lawn",
+          "description": "striped pattern",
+          "dueDate": "9/17/21"
+        }
+      ]
+    }
+
+  ]
+}

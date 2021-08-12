@@ -1,5 +1,7 @@
 <template>
-  <div class="container mt-4">
+  <div class="container mt-4" onLoad="javascript:email($auth.user.email)">
+    <p>email: {{userEmail}}</p>
+
     <div class="col-3">
       <div class="p-2 alert alert-dark">
         <h3>Add Task</h3>
@@ -35,7 +37,7 @@
                 :key="element.name"
             >
               Task: {{ element.name }} <br/>
-              Description: {{ element.description }}
+              Description: {{ element.description }} <br/>
               Due Date: {{element.dueDate}}
             </div>
           </draggable>
@@ -57,7 +59,7 @@
                 :key="element.name"
             >
               Task: {{ element.name }} <br/>
-              Description: {{ element.description }}
+              Description: {{ element.description }}<br/>
               Due Date: {{element.dueDate}}
 
             </div>
@@ -80,7 +82,7 @@
                 :key="element.name"
             >
               Task: {{ element.name }} <br/>
-              Description: {{ element.description }}
+              Description: {{ element.description }}<br/>
               Due Date: {{element.dueDate}}
 
             </div>
@@ -103,7 +105,7 @@
                 :key="index"
             >
               Task: {{ element.name }} <br/>
-              Description: {{ element.description }}
+              Description: {{ element.description }}<br/>
               Due Date: {{element.dueDate}}
 
               <b-button @click="deleteTask(index)">Delete</b-button>
@@ -123,6 +125,7 @@
 import draggable from "vuedraggable";
 import {mapMutations, mapGetters, mapState} from 'vuex';
 import Datepicker from 'vuejs-datepicker';
+import Users from '../resources/users.json'
 
 
 export default {
@@ -138,17 +141,30 @@ export default {
       dueDate: ''
     };
   },
+  created() {
+    this.setUserEmail(this.$auth.user.email);
+    let userData = Users;
+    for (let x in userData.users) {
+      if(userData.users[x].email === this.userEmail)
+      {
+        this.setBacklog(userData.users[x].arrBacklog);
+        this.setTodo(userData.users[x].arrTodo);
+        this.setDoing(userData.users[x].arrDoing);
+        this.setDone(userData.users[x].arrDone);
+      }
+    }
+  },
   /**
    * Imports the computed arrays from the store to be used in the HTML
    */
   computed: {
-    ...mapState(['arrBackLog', 'arrTodo', 'arrDoing', 'arrDone'])
+    ...mapState(['arrBackLog', 'arrTodo', 'arrDoing', 'arrDone', 'userEmail'])
   },
   /**
    * Imports the methods from the store to be used in adding/moving tasks
    */
   methods: {
-    ...mapMutations(['setBacklog', 'setTodo', 'setDoing', 'setDone']),
+    ...mapMutations(['setBacklog', 'setTodo', 'setDoing', 'setDone', 'setUserEmail']),
     ...mapGetters(['getBacklog', 'getTodo', 'getDoing', 'getDone']),
     /**
      * The add function adds a task to the arrBacklog array and then resets the title, description, and date fields

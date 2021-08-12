@@ -11,10 +11,14 @@ export const setInitialState = () => {
         arrBackLog: [],
         arrTodo: [],
         arrDoing: [],
-        arrDone: []
+        arrDone: [],
+        userEmail: ''
     };
 };
 export const mutations = {
+    setUserEmail: (state, userEmail) => {
+        state.userEmail = userEmail;
+    },
     /**
      * Sets the backlog array
      * @param state of the Store

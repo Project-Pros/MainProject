@@ -16,22 +16,53 @@
 </template>
 
 <script>
+import {mapMutations, mapState} from "vuex";
+// import Users from "../resources/users.json";
+// import * as fs from 'fs';
+
+
 /**
  * Login page to oAuth0 and the project pros application
  */
 export default {
   name: "login.vue",
+  computed: {
+    ...mapState(['arrBackLog', 'arrTodo', 'arrDoing', 'arrDone', 'userEmail'])
+  },
   methods: {
+    ...mapMutations(['setBacklog', 'setTodo', 'setDoing', 'setDone', 'setUserEmail']),
+
     /**
      * Logs user into oAuth
      */
-    login() {
-      this.$auth.loginWithRedirect();
+    async login() {
+      await this.$auth.loginWithRedirect();
     },
     /**
      * Logs user our of oAuth
      */
     logout() {
+      // const FileSystem = require(fs);
+      // let saveData = {};
+      // let userData = Users;
+      // for (let x in userData.users) {
+      //   if(userData.users[x].email === this.userEmail)
+      //   {
+      //     saveData = {
+      //       "email": this.userEmail,
+      //       "arrBacklog": this.arrBacklog,
+      //       "arrTodo": this.arrTodo,
+      //       "arrDoing": this.arrDoing,
+      //       "arrDone": this.arrDone
+      //     };
+      //   }
+      //   else {
+      //     saveData += userData.users[x];
+      //   }
+      // }
+      // FileSystem.writeFile('../resources/users.json', JSON.stringify(saveData), (err) => {
+      //   if (err) throw err;
+      // });
       this.$auth.logout({
         returnTo: window.location.origin
       });
