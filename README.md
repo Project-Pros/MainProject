@@ -18,12 +18,17 @@ This is the Project-Pros software application project with members Reem Aldhufai
 ## II. Files Included
 ------------------
 ### main-application(folder) which includes: 
+* .idea(folder)
 * dist(folder)
+* docs(folder)
+* main-application(folder)
 * public(folder)
 * src(folder)
 * tests/units/pages(folder)
 * MainProject.iml
+* auth_config.json
 * babel.config.js
+* jest.config.js
 * package-lock.json
 * package.json, 
 * README.md 
@@ -57,7 +62,7 @@ This is the Project-Pros software application project with members Reem Aldhufai
 * Java 8/11
 * IDE (IntelliJ, Eclipse)
 * Browser (Chrome, Firefox)
-* Integrated Technologies (Calendar API, Kanban board, VueJS, Oauth)
+* Integrated Technologies (Calendar API, Kanban board, VueJS, Auth0)
 ## IV. Design
 -----------
 ### Login Page
@@ -66,7 +71,7 @@ Once the application is started, the user will be greeted with a login page. Thi
 The login page will lead to this page. The homepage is main page of this application. From here, the user will be able to start their project. 
 * Tasks--- The user will be able to create tasks for their project. Many tasks can be created for the project. Each task contains a name, description, and a due date.
 * Kanban Board--- These tasks can also be organized based on their level of completion. There is a To-Do section, a Work In Progress section, and a Completed section. Each task can be moved from one section to another based on where the user wants them. 
-* Priorities--- Each task will also consist of priority markings. These priority markings represent how important the task is. This is to help the user decide which task needs to be completed first. The color red signifies that the task is very important and needs to be completed first. The color yellow means that the tasks isn't as criticial, but it needs to be completed next. The color green signigies that the task is of low priority so it does not need to be completed urgently. 
+* Priorities--- Each task will also consist of priority markings. These priority markings represent how important the task is. This is to help the user decide which task needs to be completed first. The color red signifies that the task is very important and needs to be completed first. The color green signigies that the task is of low priority so it does not need to be completed urgently. 
 ### Calendar
 The second main page of this application is the calendar. This page shows a calendar either with a monthly view or a weekly view. If a task has been assigned a due date, then the task will appear on the day that it is due. The user is able to switch between the monthly and weekly views and they are able to click on a task and view its description. This page is to allow the user to have a better picture of how soon they need to complete their tasks.
 
@@ -87,4 +92,6 @@ For the first Code Milestone due on June 24, 2021, we have a prototype of the lo
 ### Code Milestone 2
 For the second Code Milestone due on July 15, 2021, we have added in new functions to our application. We have added in new pages onto the application. There is the login page, the kanban board page, and the calendar page. We have also added in navigation between these pages. This means that the user will be able to go back and forth on what pages they want to look at. This mostly applies for the kanban board page and the calendar page. Currently, we do not have the calendar created as that is part of code milestone 3. The kanban board now has functionality. The user is able to create tasks and then move the tasks around on the board based on completion. They are also able to delete tasks once they reach the done column. The login page is functional and works with Oauth0 service. The user can login and logout of the application. If they are logged in they can see the KanbanBoard and Calendar pages whereas if they are not only the login page will appear. Basic jest testing was also added to the project. 
 ### Code Milestone 3
-For the third Code Milestone due on July 29, 2021, we added onto the functionality of our application. In order to make our application accessible to others on the internet, we had to deploy our application to a server. To do this, we created a Digital Ocean account for our application. We are incorporating Oauth for the login page which runs on the URL and on localhost. We also added to the calendar page. Prior to this milestone, we just had a page for it, but now we have actually created a calendar to be displayed on the page. We also worked to add in functionality to the calendar. This includes navigating between months using the arrows in the upper right-hand corner. The date picker was added to the Kanban tasks to assist in adding tasks to the correct dates. The vue store was implemented so that we can pass the arrays of values between the pages. A database was also set up in Digital Ocean so that we can store a users tasks for each time they log in. In comparison to the predicted milestone in the project plan, we have completed what we wanted to. In the project plan, it just says to add in the calendar which has been done. The calendar page does need more enhancements and the database needs to be hooked to the project for Milestone 4.
+For the third Code Milestone due on July 29, 2021, we added onto the functionality of our application. In order to make our application accessible to others on the internet, we had to deploy our application to a server. To do this, we created a Digital Ocean account for our application. We are incorporating Auth0 for the login page which runs on the URL and on localhost. We also added to the calendar page. Prior to this milestone, we just had a page for it, but now we have actually created a calendar to be displayed on the page. We also worked to add in functionality to the calendar. This includes navigating between months using the arrows in the upper right-hand corner. The date picker was added to the Kanban tasks to assist in adding tasks to the correct dates. The vue store was implemented so that we can pass the arrays of values between the pages. A database was also set up in Digital Ocean so that we can store a users tasks for each time they log in. In comparison to the predicted milestone in the project plan, we have completed what we wanted to. In the project plan, it just says to add in the calendar which has been done. The calendar page does need more enhancements and the database needs to be hooked to the project for Milestone 4.
+### Code Milestone 4
+For the fourth Code Milestone due on August 13, 2021, we worked a lot on getting the application to work with the database on Digital Ocean. There were also a few more fixes to the calendar to improve functionality. We also added in more generated tests for our project. For the previous milestone, we had our project running on Digital Ocean. For this milestone, our login page is still running on the URL and the localhost. We continued to work on the database in Digital Ocean to make it more efficient for the tasks to be stored for the users when they log into the application. The calendar still contains the vue store to pass the arrays of the values between the pages. Some more work was done on this. In comparison to the predicted milestone in the project plan, we have completed what we needed to do. According to the project plan, it says to add in unit/integration tests as well as project documents and notes. The tests and the project documents have been completed. The notes part of the plan is incorporated in each task when they are created. Each tasks contains a description of what the user wants accomplished.
