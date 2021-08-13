@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-4" onLoad="javascript:email($auth.user.email)">
-    <p>email: {{userEmail}}</p>
+    <p>Logged in User Email: {{userEmail}}</p>
 
     <div class="col-3">
       <div class="p-2 alert alert-dark">

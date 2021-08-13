@@ -16,10 +16,8 @@
 </template>
 
 <script>
-import {mapMutations, mapState} from "vuex";
-// import Users from "../resources/users.json";
-// import * as fs from 'fs';
-
+import {mapGetters, mapMutations, mapState} from "vuex";
+import Users from "../resources/users.json";
 
 /**
  * Login page to oAuth0 and the project pros application
@@ -31,6 +29,8 @@ export default {
   },
   methods: {
     ...mapMutations(['setBacklog', 'setTodo', 'setDoing', 'setDone', 'setUserEmail']),
+    ...mapGetters(['getBacklog', 'getTodo', 'getDoing', 'getDone']),
+
 
     /**
      * Logs user into oAuth
@@ -42,27 +42,29 @@ export default {
      * Logs user our of oAuth
      */
     logout() {
-      // const FileSystem = require(fs);
-      // let saveData = {};
-      // let userData = Users;
-      // for (let x in userData.users) {
-      //   if(userData.users[x].email === this.userEmail)
-      //   {
-      //     saveData = {
-      //       "email": this.userEmail,
-      //       "arrBacklog": this.arrBacklog,
-      //       "arrTodo": this.arrTodo,
-      //       "arrDoing": this.arrDoing,
-      //       "arrDone": this.arrDone
-      //     };
-      //   }
-      //   else {
-      //     saveData += userData.users[x];
-      //   }
-      // }
-      // FileSystem.writeFile('../resources/users.json', JSON.stringify(saveData), (err) => {
-      //   if (err) throw err;
-      // });
+      let userData = Users;
+      let saveData = {
+        users: []
+      };
+      for (let x in userData.users) {
+        if(userData.users[x].email === this.userEmail)
+        {
+          saveData.users[x] = {
+            "email": this.userEmail,
+            "arrBacklog": this.getBacklog(),
+            "arrTodo": this.getTodo(),
+            "arrDoing": this.getDoing(),
+            "arrDone": this.getDone()
+          };
+        }
+        else {
+          saveData.users[x] = userData.users[x];
+        }
+      }
+      // const path = 'users.json'
+      // let FileSaver = require('file-saver');
+      // let blob = new Blob([JSON.stringify(saveData)], {type: "text/plain;charset=utf-8"});
+      // FileSaver.saveAs(blob, path);
       this.$auth.logout({
         returnTo: window.location.origin
       });
