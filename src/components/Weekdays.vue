@@ -1,3 +1,6 @@
+
+<!-- This component shows the week days -->
+
 <template>
   <ol class="dayOfWeek">
     <li v-for="weekday in weekdays" :key="weekday">{{ weekday }}</li>
@@ -9,6 +12,7 @@ const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 export default {
   name: "Weekdays",
+
 
   computed: {
     weekdays() {

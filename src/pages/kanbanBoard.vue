@@ -1,3 +1,5 @@
+
+<!-- kanbanboard page -->
 <template>
   <div class="container mt-4" onLoad="javascript:email($auth.user.email)">
     <p>Logged in User Email: {{userEmail}}</p>

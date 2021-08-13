@@ -1,3 +1,6 @@
+
+<!-- This components shows the current month -->
+
 <template>
   <div class="date-indicator">{{ selectedMonth }}</div>
 </template>
@@ -10,7 +13,7 @@ export default {
       required: true
     }
   },
-
+// Format the current date and display it to the user
   computed: {
     selectedMonth() {
       return this.selectedDate.format("MMMM YYYY");

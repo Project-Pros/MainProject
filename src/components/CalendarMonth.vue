@@ -1,3 +1,5 @@
+
+<!-- This components is the main component of the calendar -->
 <template>
   <div class="calendarMonth">
     <div class="calendarMonthHeader">
@@ -62,6 +64,8 @@ export default {
       ];
     },
 
+
+// Add dates to current month
     numberOfDaysInMonth() {
       return dayjs(this.selectedDate).daysInMonth();
     },
@@ -78,6 +82,8 @@ export default {
     },
 
 
+
+// Check if a date is the current day and month
     currentMonthDays() {
       return [...Array(this.numberOfDaysInMonth)].map((day, index) => {
         return {
@@ -89,6 +95,8 @@ export default {
       });
     },
 
+
+// adding dates from previous month
     previousMonthDays() {
       const firstOfTheMonthWeekday = this.getWeekday(
         this.currentMonthDays[0].date
@@ -122,6 +130,7 @@ export default {
       );
     },
 
+// adding dates from upcoming month
     nextMonthDays() {
       const lastDayOfWeekday = this.getWeekday(
         `${this.year}-${this.month}-${this.currentMonthDays.length}`

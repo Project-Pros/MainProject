@@ -1,3 +1,6 @@
+
+<!-- This component represents a single day -->
+
 <template>
   <li
     class="calendarDay"
@@ -33,6 +36,7 @@ export default {
     }
   },
 
+// format received date
   computed: {
     label() {
       return dayjs(this.day.date).format("D");
