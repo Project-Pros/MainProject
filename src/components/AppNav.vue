@@ -1,3 +1,6 @@
+
+<!-- Navigate between pages -->
+
 <template>
   <nav class="navbar navbar-expand-sm navbar-light navbar-jw">
     <button
