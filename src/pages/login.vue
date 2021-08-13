@@ -1,5 +1,3 @@
-
-<!login page -->
 <template>
   <div class="login-wrap">
 
